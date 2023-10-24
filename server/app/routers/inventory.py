@@ -9,9 +9,9 @@ from ..controllers import create_inventory, get_inventories, update_inventory, d
 # Define your APIRouter
 inventory_router = APIRouter()
 
-@inventory_router.post("/{user_id}")
-def create(inventory: dict, user_id: int, db: Session = Depends(get_db)):
-    db_inventory = create_inventory(db=db, inventory=inventory, user_id=user_id)
+@inventory_router.post("/")
+def create(inventory: dict, db: Session = Depends(get_db)):
+    db_inventory = create_inventory(db=db, inventory=inventory)
     return db_inventory
 
 @inventory_router.get("/")
@@ -40,12 +40,12 @@ def read_inventories(
     inventories = get_inventories(db, filters=filters, skip=skip, limit=limit)
     return inventories
 
-@inventory_router.patch("/update/{inventory_id}")
+@inventory_router.patch("/{inventory_id}")
 def update(inventory_id, inventory: dict, db: Session = Depends(get_db)):
     db_inventory = update_inventory(db, inventory_id=inventory_id, inventory=inventory)
     return db_inventory
 
-@inventory_router.delete("/delete/{inventory_id}")
+@inventory_router.delete("/{inventory_id}")
 def remove(inventory_id: int, db: Session=Depends(get_db)):
     delete_inventory(db, inventory_id)
     return {"message": "deleted inventory!"}

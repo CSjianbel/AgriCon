@@ -4,9 +4,9 @@ from ..models import Inventory
 
 from sqlalchemy import select
 
-def create_inventory(db: Session, inventory: dict, user_id: int):
+def create_inventory(db: Session, inventory: dict):
     db_inventory = Inventory(
-        user_id=user_id,
+        user_id=inventory['user_id'],
         order_id=inventory['order_id'],
         item_id=inventory['item_id'],
         quantity=inventory['quantity'],
