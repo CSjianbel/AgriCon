@@ -223,10 +223,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="fixed bottom-15">
+            <div>
+                TOTAL
+            </div>
+            <div>
+                <p class="text-2xl font-bold">₱12,000</p>
+            </div>
+        </div>
         <div class="fixed bottom-0 sm:w-[500px] w-full p-4 bg-white text-white border border-t">
-            <a href="/">
+            <a href="/payment-methods">
                 <button class="bg-[#1CB87E] w-full py-4 rounded-lg font-bold">
-                    Confirm Transaction
+                    Proceed to Payment
                 </button>
             </a>
         </div>

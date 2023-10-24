@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,11 +62,14 @@ Route::get('/transaction', function () {
     return view('transaction_view');
 });
 
+Route::get('/payment-methods', function () {
+    return view('payment-method');
+});
 
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ProductController;
+
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('signup', [UserController::class, 'signup'])->name('signup');
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
 // Route::get('products', [ProductController::class, 'getAllProducts'])->name('products');
 // Route::get('products/{id}', [ProductController::class, 'getFarmProduct'])->name('products');
+Route::post('create-product', [ProductController::class, 'createProduct'])->name('create.product');
