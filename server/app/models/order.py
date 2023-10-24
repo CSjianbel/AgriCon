@@ -9,10 +9,9 @@ class Order(Base):
     id = Column(Integer, primary_key=True, index=True)
     total_price = Column(Float)
     status = Column(String(100))
-    timestamp  = Column(DateTime, default=datetime.datetime.utcnow)
-
+    timestamp = Column(DateTime, default=datetime.datetime.utcnow)
     business_id = Column(Integer, ForeignKey('users.id'))
-    business = relationship('User', back_populates="orders")
+    farm_id = Column(Integer, ForeignKey('users.id'))
 
-    farmer_id = Column(Integer, ForeignKey('users.id'))
-    farmer = relationship('User', back_populates="orders")
+    business = relationship('User', back_populates="business_orders", foreign_keys=[business_id])
+    farm = relationship('User', back_populates="farm_orders", foreign_keys=[farm_id])

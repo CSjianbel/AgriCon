@@ -22,14 +22,15 @@ def get_item(db: Session, item_id: int):
 
 def get_items(db: Session, filters: dict, skip: int = 0, limit: int = 100):
     query = db.query(Item)
-    
+    if 'item_id' in filters:
+        query = query.filter(Item.id == filters['item_id'])
     if 'farm_id' in filters:
         query = query.filter(Item.farm_id == filters['farm_id'])
     if 'category' in filters:
         query = query.filter(Item.category == filters['category'])
     if 'status' in filters:
         query = query.filter(Item.status == filters['status'])
-        
+
     return query.offset(skip).limit(limit).all()
 
 def update_item(db: Session, item_id: int, item: dict):

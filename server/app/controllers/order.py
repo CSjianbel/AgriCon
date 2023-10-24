@@ -7,7 +7,7 @@ from sqlalchemy import select, update, delete
 
 def create_order(db: Session, order: dict):
     db_order = Order(
-        farmer_id=order['farmer_id'], business_id=order['business_id'],
+        farm_id=order['farm_id'], business_id=order['business_id'],
         total_price=order['total_price'], status=order['status']
     )
     db.add(db_order)
