@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from ..config import Base, engine
 import datetime
+from sqlalchemy.orm import relationship
 
 class User(Base):
     __tablename__ = "users"
@@ -13,5 +14,6 @@ class User(Base):
     created = Column(DateTime, default=datetime.datetime.utcnow)
     modified = Column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
 
+    items = relationship("Item", back_populates="farm")
+
 # Reflect the schema and create tables
-Base.metadata.create_all(engine)
