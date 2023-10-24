@@ -5,6 +5,7 @@ from .inventory import Inventory
 
 from .order_items import OrderItem
 from .rating import Rating
+from .cart_items import CartItem
 
 class Item(Base):
     __tablename__ = "items"
@@ -20,3 +21,4 @@ class Item(Base):
     inventory = relationship("Inventory", back_populates="item", foreign_keys=[Inventory.item_id])
     order = relationship('OrderItem', back_populates='items', foreign_keys=[OrderItem.item_id])
     ratings = relationship('Rating', back_populates='item', foreign_keys=[Rating.item_id])
+    cart = relationship('CartItem', back_populates='item', foreign_keys=[CartItem.item_id])
