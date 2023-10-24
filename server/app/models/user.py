@@ -5,6 +5,7 @@ import datetime
 from sqlalchemy.orm import relationship
 from .order import Order
 from .inventory import Inventory
+from .rating import Rating
 
 class User(Base):
     __tablename__ = "users"
@@ -12,6 +13,7 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     first_name = Column(String(100))
     last_name = Column(String(100))
+    email = Column(String(100), unique=True, index=True)
     password = Column(String(64))
     user_type = Column(String(10))
     created = Column(DateTime, default=datetime.datetime.utcnow)
@@ -21,3 +23,5 @@ class User(Base):
     farm_orders = relationship('Order', back_populates="farm", foreign_keys=[Order.farm_id])
     items = relationship("Item", back_populates="farm")
     inventory = relationship("Inventory", back_populates="user", foreign_keys=[Inventory.user_id])
+    business_ratings = relationship('Rating', back_populates="business", foreign_keys=[Rating.business_id])
+    farm_ratings = relationship('Rating', back_populates="farm", foreign_keys=[Rating.farm_id])

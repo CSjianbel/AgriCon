@@ -8,6 +8,7 @@ def create_user(db: Session, user: dict):
     db_user = User(
         first_name=user['first_name'], 
         last_name=user['last_name'],
+        email=user['email'],
         password=user['password'], 
         user_type=user['user_type']
     )

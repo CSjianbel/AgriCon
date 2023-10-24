@@ -18,6 +18,7 @@ def read_users(
     user_id: Union[int, None] = Query(None, description='Filter by user ID'), 
     first_name: Union[str, None] = Query(None, description='Filter by first name'), 
     last_name: Union[str, None] = Query(None, description='Filter by last name'), 
+    email: Union[str, None] = Query(None, description='Filter by email'),
     user_type: Union[str, None] = Query(None, description='Filter by user type'),
     skip: int = 0,
     limit: int = 100, 
@@ -30,6 +31,8 @@ def read_users(
         filters['first_name'] = first_name
     if last_name is not None:
         filters['last_name'] = last_name
+    if email is not None:
+        filters['email'] = email
     if user_type is not None:
         filters['user_type'] = user_type
 

@@ -21,6 +21,10 @@ Route::get('/product', function () {
     return view('product');
 });
 
+Route::get('/farmer-profile', function () {
+    return view('farmer-profile');
+});
+
 Route::get('/inventory', function () {
     return view('inventory');
 });
