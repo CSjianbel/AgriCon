@@ -29,7 +29,6 @@
             <button data-modal-target="defaultModal" data-modal-toggle="defaultModal"
                 class="bg-[#1CB87E] w-full py-4 rounded-lg font-bold">
                 Add Product
-
                 </a>
         </div>
 
@@ -43,9 +42,9 @@
         <!-- Main modal -->
         <div id="defaultModal" tabindex="-1" aria-hidden="true"
             class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 ">
-            <div class="relative w-[25%] max-w-2xl max-h-full">
+            <div class="relative md-w-full lg-w-[25%]">
                 <!-- Modal content -->
-                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="relative  bg-white rounded-lg shadow dark:bg-gray-700">
                     <!-- Modal header -->
                     <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
                         <h3 class=" font-semibold text-gray-900 dark:text-white">
@@ -85,7 +84,8 @@
 
                             <div class="mt-3">
                                 <label for="product_description"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description..</label>
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product
+                                    Description..</label>
                                 <textarea id="product_description" rows="4"
                                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Write your product description.."></textarea>
@@ -94,7 +94,8 @@
                         </form>
                     </div>
                     <!-- Modal footer -->
-                    <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                    <div
+                        class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600 justify-end">
                         <button data-modal-hide="defaultModal" type="button"
                             class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
                         <button data-modal-hide="defaultModal" type="button"

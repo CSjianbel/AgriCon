@@ -53,6 +53,9 @@ Route::get('/transaction', function () {
     return view('transaction_view');
 });
 
+Route::get('/payment-methods', function () {
+    return view('payment-method');
+});
 
 use App\Http\Controllers\UserController;
 Route::post('login', [UserController::class, 'login'])->name('login');

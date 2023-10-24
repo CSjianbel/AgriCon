@@ -23,7 +23,7 @@
         <div class="flex justify-between mb-6">
             <div class="flex-col">
                 <p class="font-bold text-2xl">Kangkong</p>
-                <p class="font-bold text-base text-[#1CB87E]">₱ 15.00 / kg</p>
+                <p class="text-gray-600">Product description</p>
             </div>
             <button class="p-4 w-fit h-fit bg-[#edf5ef] rounded-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
