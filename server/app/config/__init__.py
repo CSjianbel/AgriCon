@@ -1,4 +1,1 @@
-from .config import engine
-from .config import metadata
-from .config import app
-from .config import database
+from .config import engine, SessionLocal, Base, get_db

@@ -1,35 +1,22 @@
-from fastapi import FastAPI
-import databases
-import sqlalchemy
-from dotenv import load_dotenv
 import os
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
 
 load_dotenv()
 
-''' FastAPI CONFIGURATION '''
-app = FastAPI(title="LAAD",
-              docs_url="/docs", 
-              redoc_url="/redocs"
-)
-
-
-''' DATABASE CONNECTION '''
-# DATABASE_URL = "mysql+mysqlconnector://root:password@localhost/laad"
 DATABASE_URL = f"mysql+mysqlconnector://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
-database = databases.Database(DATABASE_URL)
-metadata = sqlalchemy.MetaData()
 
-engine = sqlalchemy.create_engine(
-    DATABASE_URL
-)
+engine = create_engine(DATABASE_URL)
 
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-''' APP EVENT SETTING'''
-@app.on_event("startup")
-async def startup():
-    await database.connect()
+Base = declarative_base()
 
-
-@app.on_event("shutdown")
-async def shutdown():
-    await database.disconnect()
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

@@ -1,1 +1,1 @@
-from .post import post_route
+from .post import post_router
