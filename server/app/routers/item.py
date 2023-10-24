@@ -10,8 +10,8 @@ from ..controllers import get_items, create_item, update_item, delete_item
 item_router = APIRouter()
 
 @item_router.post("/")
-def create(item: dict, farm_id: int, db: Session = Depends(get_db)):
-    db_item = create_item(db=db, item=item, farm_id=farm_id)
+def create(item: dict, db: Session = Depends(get_db)):
+    db_item = create_item(db=db, item=item)
     return db_item
 
 @item_router.get("/")
