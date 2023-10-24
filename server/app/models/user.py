@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from ..config import Base, engine
 import datetime
+from sqlalchemy.orm import relationship
 
 class User(Base):
     __tablename__ = "users"
@@ -16,6 +17,6 @@ class User(Base):
 
     business_orders = relationship('Order', back_populates="business")
     farmer_orders = relationship('Order', back_populates="farmer")
+    items = relationship("Item", back_populates="farm")
 
 # Reflect the schema and create tables
-Base.metadata.create_all(engine)
