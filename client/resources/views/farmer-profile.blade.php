@@ -7,9 +7,10 @@
         <div class="flex items-center justify-between border h-[200px] w-full rounded-lg px-10">
             <div class="flex flex-items">
                 <div class="bg-gray-600 h-[70px] w-[70px] rounded-full">
+                <img src="{{ asset('assets/martin.jpg') }}" alt="" class="rounded-full" width="70" height="70">
                 </div>
                 <div class="flex flex-col ml-4">
-                    <p class="text-gray-600  text-2xl font-bold ">Martin the Farmer</p>
+                    <p class="text-gray-600  text-xl font-bold ">Martin the Farmer</p>
                     <p class="text-gray-600 text-base font-medium">Martin Edgar Atole</p>
                     <p class="text-gray-600 text-sm mb-2">Cararayan, Naga City</p>
                    
