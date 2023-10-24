@@ -6,6 +6,7 @@ from sqlalchemy.orm import relationship
 from .order import Order
 from .inventory import Inventory
 from .rating import Rating
+from .cart import Cart
 
 class User(Base):
     __tablename__ = "users"
@@ -25,3 +26,5 @@ class User(Base):
     inventory = relationship("Inventory", back_populates="user", foreign_keys=[Inventory.user_id])
     business_ratings = relationship('Rating', back_populates="business", foreign_keys=[Rating.business_id])
     farm_ratings = relationship('Rating', back_populates="farm", foreign_keys=[Rating.farm_id])
+    business_carts = relationship('Cart', back_populates="business", foreign_keys=[Cart.business_id])
+    farm_carts = relationship('Cart', back_populates="farm", foreign_keys=[Cart.farm_id])
