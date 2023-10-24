@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/login', function () {
+    return view('signin');
+});
+
 Route::get('/product', function () {
     return view('product');
 });
@@ -24,6 +28,10 @@ Route::get('/product', function () {
 Route::get('/farmer-profile', function () {
     return view('farmer-profile');
 });
+
+use App\Http\Controllers\UserController;
+Route::post('login', [UserController::class, 'login'])->name('login');
+
 
 Route::get('/inventory', function () {
     return view('inventory');
