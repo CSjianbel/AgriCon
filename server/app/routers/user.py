@@ -8,7 +8,7 @@ from ..controllers import get_users, create_user, update_user, delete_user
 # Define your APIRouter
 user_router = APIRouter()
 
-@user_router.post("/create")
+@user_router.post("/")
 def create(user: dict, db: Session = Depends(get_db)):
     db_user = create_user(db=db, user=user)
     return db_user
@@ -36,12 +36,12 @@ def read_users(
     users = get_users(db, filters=filters, skip=skip, limit=limit)
     return users
 
-@user_router.patch("/update/{user_id}")
+@user_router.patch("/{user_id}")
 def patch_user(user_id, user: dict, db: Session = Depends(get_db)):
     db_user = update_user(db, user_id=user_id, user=user)
     return db_user
 
-@user_router.delete("/delete/{user_id}")
+@user_router.delete("/{user_id}")
 def remove_user(user_id: int, db: Session=Depends(get_db)):
     delete_user(db, user_id)
     return {"message": "deleted user!"}
