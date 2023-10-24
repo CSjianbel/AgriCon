@@ -3,6 +3,8 @@ from ..config import Base, engine
 from sqlalchemy.orm import relationship
 from .inventory import Inventory
 
+from .order_items import OrderItem
+
 class Item(Base):
     __tablename__ = "items"
 
@@ -15,3 +17,5 @@ class Item(Base):
 
     farm = relationship("User", back_populates="items")
     inventory = relationship("Inventory", back_populates="item", foreign_keys=[Inventory.item_id])
+
+    order = relationship('OrderItem', back_populates='items', foreign_keys=[OrderItem.item_id])
