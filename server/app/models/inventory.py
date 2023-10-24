@@ -7,7 +7,7 @@ class Inventory(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey('users.id'))
-    order_id = Column(Integer, ForeignKey('orders.id'))
+    order_id = Column(Integer, ForeignKey('orders.id'), nullable=True)
     item_id = Column(Integer, ForeignKey('items.id'))
     quantity = Column(Integer)
     unit_of_measure = Column(String(255), nullable=False)
