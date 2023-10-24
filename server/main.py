@@ -1,15 +1,18 @@
 import uvicorn
 from fastapi import FastAPI
-from app.routers.post import post_router
-from app.routers.user import user_router
+from app.routers import user_router, item_router, order_router
 
 app = FastAPI(title="LAAD",
               docs_url="/docs", 
               redoc_url="/redocs"
 )
 
-app.include_router(post_router, prefix="/posts", tags=["posts"])
+# Create all tables in the database
+# 
+# app.include_router(post_router, prefix="/posts", tags=["posts"])
 app.include_router(user_router, prefix="/users", tags=["users"])
+app.include_router(order_router, prefix="/order", tags=["order"])
+app.include_router(item_router, prefix="/items", tags=["items"])
 
 @app.get("/")
 def home():
