@@ -7,9 +7,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     @vite('resources/css/app.css')
 </head>
-<body>
-    <main class="py-4">
-        @yield('content')
-    </main>
+<body class="bg-slate-100">
+    <div class="w-[500px] h-screen bg-white m-auto p-0">
+        <main>
+            @yield('content')
+        </main>
+    </div>
 </body>
 </html>
