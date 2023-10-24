@@ -38,6 +38,11 @@ class UserController extends Controller
         return redirect()->route('login');
     }
 
+    public function logout() {
+        session()->flush();
+        return redirect()->route('login');
+    }
+
     public function index()
     {
         // Your code here
