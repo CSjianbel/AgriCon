@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, DateTime, Float, ForeignKey
 from sqlalchemy.orm import relationship
 from ..config import Base, engine
 import datetime
+from .inventory import Inventory
 
 class Order(Base):
     __tablename__ = "orders"
@@ -15,3 +16,4 @@ class Order(Base):
 
     business = relationship('User', back_populates="business_orders", foreign_keys=[business_id])
     farm = relationship('User', back_populates="farm_orders", foreign_keys=[farm_id])
+    inventory = relationship('Inventory', back_populates="order", foreign_keys=[Inventory.order_id])

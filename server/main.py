@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
-from app.routers import user_router, item_router, order_router
+from app.routers import user_router, item_router, order_router, inventory_router
 
 app = FastAPI(title="LAAD",
               docs_url="/docs", 
@@ -13,6 +13,7 @@ app = FastAPI(title="LAAD",
 app.include_router(user_router, prefix="/users", tags=["users"])
 app.include_router(order_router, prefix="/orders", tags=["order"])
 app.include_router(item_router, prefix="/items", tags=["items"])
+app.include_router(inventory_router, prefix="/inventory", tags=["inventory"])
 
 @app.get("/")
 def home():

@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
 from ..config import Base, engine
 from sqlalchemy.orm import relationship
+from .inventory import Inventory
 
 class Item(Base):
     __tablename__ = "items"
@@ -13,4 +14,4 @@ class Item(Base):
     status = Column(String(255), nullable=False)
 
     farm = relationship("User", back_populates="items")
-
+    inventory = relationship("Inventory", back_populates="item", foreign_keys=[Inventory.item_id])

@@ -4,6 +4,7 @@ from ..config import Base, engine
 import datetime
 from sqlalchemy.orm import relationship
 from .order import Order
+from .inventory import Inventory
 
 class User(Base):
     __tablename__ = "users"
@@ -19,3 +20,4 @@ class User(Base):
     business_orders = relationship('Order', back_populates="business", foreign_keys=[Order.business_id])
     farm_orders = relationship('Order', back_populates="farm", foreign_keys=[Order.farm_id])
     items = relationship("Item", back_populates="farm")
+    inventory = relationship("Inventory", back_populates="user", foreign_keys=[Inventory.user_id])
