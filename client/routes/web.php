@@ -55,6 +55,9 @@ Route::get('/transaction', function () {
 
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('signup', [UserController::class, 'signup'])->name('signup');
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
+// Route::get('products', [ProductController::class, 'getAllProducts'])->name('products');
+// Route::get('products/{id}', [ProductController::class, 'getFarmProduct'])->name('products');

@@ -42,39 +42,4 @@ class UserController extends Controller
         session()->flush();
         return redirect()->route('login');
     }
-
-    public function index()
-    {
-        // Your code here
-    }
-
-    public function create()
-    {
-        // Your code here
-    }
-
-    public function store(Request $request)
-    {
-        // Your code here
-    }
-
-    public function show($id)
-    {
-        // Your code here
-    }
-
-    public function edit($id)
-    {
-        // Your code here
-    }
-
-    public function update(Request $request, $id)
-    {
-        // Your code here
-    }
-
-    public function destroy($id)
-    {
-        // Your code here
-    }
 }
