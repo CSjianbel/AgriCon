@@ -1,17 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="w-full">
     <div class="px-6 flex bg-white items-center justify-between h-[80px]">
         <div class="bg-[#edf5ef] p-3 rounded-lg">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
-            </svg>              
+            </svg>
         </div>
         <p class="font-bold">KangKong</p>
         <div class="bg-[#ffffff] text-white p-3 rounded-lg">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
-            </svg>              
+            </svg>
         </div>
     </div>
 
@@ -30,7 +31,7 @@
                   </svg>
             </button>
         </div>
-        
+
 
         <div class="border rounded-lg px-4 py-4 flex items-center">
             <img class="rounded-lg mr-4" src="{{ asset('assets/martin.jpg') }}" alt="martin" width="60" height="60">
@@ -40,7 +41,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                    </svg>  
+                    </svg>
                     <p class="text-gray-600">Cararayan, Naga City</p>
                 </div>
             </div>
@@ -99,7 +100,7 @@
 
         <p class="text-gray-600 font-bold mt-6 mb-4">Related Products</p>
 
-        
+
     <div class="grid grid-cols-2 gap-4 pb-[100px]">
         @for ($i = 1; $i <= 4; $i++)
             <x-product-card />
@@ -112,6 +113,8 @@
             Message Supplier
         </button>
     </div>
+</div>
 
-    
+<x-bottom-nav />
+
 @endsection
