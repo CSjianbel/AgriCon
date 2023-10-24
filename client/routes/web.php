@@ -21,7 +21,7 @@ Route::get('/login', function () {
     return view('signin');
 });
 
-Route::get('signup', function() {
+Route::get('/signup', function() {
     return view('signup');
 });
 
@@ -43,7 +43,11 @@ Route::get('/chats', function () {
 
 Route::get('/profile', function () {
     return view('farmer-profile');
-});
+})->middleware('farmer');
+
+Route::get('/profile', function () {
+    return view('business-profile');
+})->middleware('business');
 
 Route::get('/product-view', function () {
     return view('product');
