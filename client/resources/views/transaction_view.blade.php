@@ -1,15 +1,29 @@
 @extends('layouts.app')
 @section('content')
     <div>
-        <x-header />
+        <div class="px-6 flex bg-white items-center justify-between h-[80px]">
+            <div class="bg-[#edf5ef] p-3 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                </svg>
+            </div>
+            <p class="font-bold">Transaction Process</p>
+            <div class="bg-[#ffffff] text-white p-3 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                </svg>
+            </div>
+        </div>
         <div class="px-6 overflow-y-auto pb-[100px]">
-            <div class="flex gap-x-5 py-5">
-                <div class="flex gap-x-2 border w-full items center p-5 rounded-lg">
+            <div class="py-5">
+                <div class="flex gap-x-2 border w-full items center p-5 mb-2 rounded-lg">
                     <div class="bg-gray-500 flex my-auto h-[50px] w-[50px] rounded-full">
 
                     </div>
                     <div class="flex-col">
-                        <p>Noel Emaas</p>
+                        <p>Martin Edgar</p>
                         <p>Merchant</p>
                     </div>
                 </div>
@@ -20,7 +34,7 @@
                     </div>
                     <div class="flex-col">
                         <p>Noel Emaas</p>
-                        <p>Merchant</p>
+                        <p>Customer</p>
                     </div>
                 </div>
             </div>
@@ -34,9 +48,9 @@
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option selected>Choose Payment Method</option>
                         <option value="US">Full Payment</option>
+                        <option value="CA">25% Downpayment</option>
                         <option value="CA">50% Downpayment</option>
                         <option value="CA">75% Downpayment</option>
-                        <option value="CA">25% Downpayment</option>
                     </select>
 
 
@@ -209,7 +223,13 @@
                 </div>
             </div>
         </div>
-        <x-bottom-nav />
+        <div class="fixed bottom-0 sm:w-[500px] w-full p-4 bg-white text-white border border-t">
+            <a href="/">
+                <button class="bg-[#1CB87E] w-full py-4 rounded-lg font-bold">
+                    Confirm Transaction
+                </button>
+            </a>
+        </div>
     </div>
     <script>
         document.getElementById('increment').addEventListener('click', function() {

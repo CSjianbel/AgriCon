@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class bottomnav extends Component
+class addProduct extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class bottomnav extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.bottom-nav');
+        return view('components.add-product');
     }
 }

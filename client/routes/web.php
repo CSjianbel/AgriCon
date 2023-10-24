@@ -42,12 +42,13 @@ Route::get('/chats', function () {
 });
 
 Route::get('/profile', function () {
-    return view('profile');
+    return view('farmer-profile');
 });
 
 Route::get('/product-view', function () {
     return view('product');
 });
+
 Route::get('/transaction', function () {
     return view('transaction_view');
 });
