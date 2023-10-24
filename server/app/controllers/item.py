@@ -4,9 +4,9 @@ from ..models import Item
 
 from sqlalchemy import select
 
-def create_item(db: Session, item: dict, farm_id: int):
+def create_item(db: Session, item: dict):
     db_item = Item(
-        farm_id=farm_id,
+        farm_id=item['farm_id'],
         name=item['name'],
         unit_of_measure=item['unit_of_measure'],
         category=item['category'],

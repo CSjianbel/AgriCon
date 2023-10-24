@@ -3,14 +3,14 @@ from sqlalchemy.orm import Session
 from typing import Union
 
 from ..config import get_db
-from ..controllers import get_orders, create_order, update_order, delete_order
+from ..controllers import get_orders, create_order, update_order, delete_order, get_order_items, create_order_item, update_order_item, delete_order_item
 
 # Define your APIRouter
 order_router = APIRouter()
 
 @order_router.post("/")
-def create(order: dict, business_id: int, farm_id: int, db: Session=Depends(get_db)):
-    db_order = create_order(db=db, order=order, business_id=business_id, farm_id=farm_id)
+def create(order: dict, db: Session=Depends(get_db)):
+    db_order = create_order(db=db, order=order)
     return db_order
 
 @order_router.get("/")
@@ -45,3 +45,24 @@ def patch_order(order_id, order: dict, db: Session = Depends(get_db)):
 def remove_order(order_id: int, db: Session=Depends(get_db)):
     delete_order(db, order_id)
     return {"message": "deleted order"}
+
+@order_router.post("/{order_id}/items")
+def create_orderitem(order_id: int, order_item: dict, db: Session=Depends(get_db)):
+    order_item['order_id'] = order_id
+    db_order_item = create_order_item(db=db, order_item=order_item)
+    return db_order_item
+
+@order_router.get("/{order_id}/items")
+def read_order_items(order_id: int, db: Session=Depends(get_db)):
+    order_items = get_order_items(db, order_id=order_id)
+    return order_items
+
+@order_router.patch("/{order_id}/items/{order_item_id}")
+def patch_order_item(order_id: int, order_item_id: int, order_item: dict, db: Session=Depends(get_db)):
+    db_order_item = update_order_item(db, order_item_id=order_item_id, order_item=order_item)
+    return db_order_item
+
+@order_router.delete("/{order_id}/items/{order_item_id}")
+def remove_order_item(order_id: int, order_item_id: int, db: Session=Depends(get_db)):
+    delete_order_item(db, order_item_id)
+    return {"message": "deleted order item"}
