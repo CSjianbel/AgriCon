@@ -21,7 +21,6 @@ def get_user(db: Session, user_id: int):
 
 def get_users(db: Session, filters: dict, skip: int = 0, limit: int = 100):
     query = db.query(User)
-    print(filters)
 
     if 'user_id' in filters:
         query = query.filter(User.id == filters['user_id'])
