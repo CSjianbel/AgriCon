@@ -8,7 +8,8 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body class="bg-slate-100">
-    <div class="w-full sm:w-[500px] h-full bg-[#FAFAFA] m-auto p-0">
+
+    <div class="w-full sm:w-[500px] h-full bg-[#FDFDFD] m-auto p-0">
         <main>
             @yield('content')
         </main>
