@@ -2,7 +2,7 @@
 @section('content')
     <div>
         <x-header />
-        <div class="px-6">
+        <div class="px-6 overflow-y-auto pb-[100px]">
             <div class="flex gap-x-5 py-5">
                 <div class="flex gap-x-2 border w-full items center p-5 rounded-lg">
                     <div class="bg-gray-500 flex my-auto h-[50px] w-[50px] rounded-full">
@@ -45,7 +45,7 @@
                     </div>
                     <label for="search-dropdown" class="mb-2 text-sm font-medium">Price</label>
                     <div class="flex">
-                        <button id="dropdown-button" data-dropdown-toggle="dropdown"
+                        <button id="dropdown-button"
                             class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                             type="button">P<svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -70,12 +70,11 @@
 
                     <div class="mt-5">
                         <form>
-                            <label for="search-dropdown"
-                                class="mb-2 text-sm font-medium ">Unit of Measure</label>
+                            <label for="search-dropdown" class="mb-2 text-sm font-medium ">Unit of Measure</label>
                             <div class="flex">
                                 <button id="dropdown-button" data-dropdown-toggle="dropdown"
                                     class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-                                    type="button">All categories <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                                    type="button">Select <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="m1 1 4 4 4-4" />
@@ -85,25 +84,25 @@
                                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                                         aria-labelledby="dropdown-button">
                                         <li>
-                                            <a href="#"
-                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Shopping</a>
+                                            <a href="#" data-value="Kilograms"
+                                                class="dropdown-item block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Kilograms</a>
                                         </li>
                                         <li>
-                                            <a href="#"
-                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Images</a>
+                                            <a href="#" data-value="Grams"
+                                                class="dropdown-item block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Grams</a>
                                         </li>
                                         <li>
-                                            <a href="#"
-                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">News</a>
+                                            <a href="#" data-value="Milligram"
+                                                class="dropdown-item block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Milligram</a>
                                         </li>
                                         <li>
-                                            <a href="#"
-                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Finance</a>
+                                            <a href="#" data-value="Pounds"
+                                                class="dropdown-item block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pounds</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="relative w-full">
-                                    <input type="search" id="search-dropdown"
+                                    <input type="search" id="search-dropdown2"
                                         class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-100 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                                         placeholder="Select or type unit of measure" required>
                                     <button type="submit"
@@ -137,13 +136,112 @@
                                 +
                             </button>
                         </div>
-
                     </div>
-
                 </form>
 
+                <div class="mt-10">
+                    <p class="text-1xl">Chat with each other</p>
+                    <div class="flex  bg-gray-100">
+                        <div class="flex flex-col flex-1 overflow-hidden">
+                            <div class="flex flex-1">
+                                <!-- Conversation Area -->
+                                <div class="flex flex-1 flex-col overflow-hidden">
+                                    <!-- Messages -->
+                                    <div class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200 p-4">
+                                        <!-- Received Message -->
+                                        <div class="flex mb-4">
+                                            <div class="flex-shrink-0 mr-3">
+                                                <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+                                                    src="https://source.unsplash.com/random/301x301" alt="">
+                                            </div>
+                                            <div class="flex-1 my-auto">
+                                                <div class="bg-white rounded-lg shadow">
+                                                    <div class="py-2 px-4 text-sm">
+                                                        <p>10,000 Pesos, deal?</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Sent Message -->
+                                        <div class="flex mb-4 flex-row-reverse">
+                                            <div class="flex-shrink-0 ml-3">
+                                                <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+                                                    src="https://source.unsplash.com/random/302x302" alt="">
+                                            </div>
+                                            <div class="flex-1">
+                                                <div class="bg-blue-500 text-white rounded-lg shadow">
+                                                    <div class="py-2 px-4 text-sm">
+                                                        <p>I'm sorry, pwede mo paba babaan yung presyo?</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Received Message -->
+                                        <div class="flex mb-4 my-auto">
+                                            <div class="flex-shrink-0 mr-3">
+                                                <img class="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+                                                    src="https://source.unsplash.com/random/303x303" alt="">
+                                            </div>
+                                            <div class="flex-1">
+                                                <div class="bg-white rounded-lg shadow">
+                                                    <div class="py-2 px-4 text-sm">
+                                                        <p>Ayaw.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Input -->
+                                    </div>
+                                    <div class="flex-none h-16 bg-white border-t py-1">
+                                        <div class="flex space-x-2">
+                                            <input type="text"
+                                                class="flex-1 py-2 rounded-lg border-gray-400 focus:outline-none focus:ring"
+                                                placeholder="Type your message...">
+                                            <button
+                                                class="bg-green-400 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
         <x-bottom-nav />
     </div>
+    <script>
+        document.getElementById('increment').addEventListener('click', function() {
+            var input = document.getElementById('quantity');
+            var value = parseInt(input.value, 10);
+            if (isNaN(value)) value = 0;
+            input.value = value + 1;
+        });
+
+        document.getElementById('decrement').addEventListener('click', function() {
+            var input = document.getElementById('quantity');
+            var value = parseInt(input.value, 10);
+            if (isNaN(value)) value = 0;
+            if (value > 0) {
+                input.value = value - 1;
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all dropdown items
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+            // Add click event listener to each dropdown item
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Get the input element
+                    const input = document.getElementById('search-dropdown2');
+
+                    // Set the input value to the data-value of the clicked item
+                    input.value = this.getAttribute('data-value');
+                });
+            });
+        });
+    </script>
 @endsection
