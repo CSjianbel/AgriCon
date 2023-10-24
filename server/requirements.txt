@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+aiomysql
+sqlalchemy
+databases
+greenlet
+asyncpg
+psycopg2-binary
+mysql-connector-python
