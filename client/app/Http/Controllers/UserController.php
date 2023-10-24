@@ -9,15 +9,15 @@ class UserController extends Controller
 {
     public function login(Request $request) {
         
-        $url = 'http://localhost:8001/users?email=' . $request->email;
-        $user = Http::get($url);        
+        $url = 'http://localhost:8001/users';
+        $user = Http::get($url, [
+            'email' => $request->email
+        ]);
         $user = $user->json();
 
-        dd($user);
-
         if ($user[0]['password'] == $request->password) {
-            session(['user_id' => $user->id]);
-            dd(session('user_id'));
+            // Store user id in session
+            session(['user_id' => $user[0]['id']]);
             return redirect('/');
         } else {
             return redirect()->route('login')->with('error', 'Invalid credentials.');
