@@ -8,6 +8,7 @@ def create_item(db: Session, item: dict):
     db_item = Item(
         farm_id=item['farm_id'],
         name=item['name'],
+        description=item['description'],
         unit_of_measure=item['unit_of_measure'],
         category=item['category'],
         status=item['status'],

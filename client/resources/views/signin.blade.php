@@ -14,7 +14,7 @@
             </div>
             <div class="flex items-start mb-16">
                 <div class="flex items-center h-5">
-                    <input id="remember" type="checkbox" value="" class="accent-pink-500 w-4 h-4 border border-gray-300 rounded focus:ring-3 focus:ring-blue-300" required>
+                    <input id="remember" type="checkbox" value="" class="accent-pink-500 w-4 h-4 border border-gray-300 rounded focus:ring-3 focus:ring-blue-300">
                 </div>
                 <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
             </div>

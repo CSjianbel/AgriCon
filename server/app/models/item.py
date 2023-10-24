@@ -13,6 +13,7 @@ class Item(Base):
     id = Column(Integer, primary_key=True, index=True)
     farm_id = Column(Integer, ForeignKey("users.id"))
     name = Column(String(255), nullable=False)
+    description = Column(String(255), nullable=False)
     unit_of_measure = Column(String(255), nullable=False)
     category = Column(String(255), nullable=False)
     status = Column(String(255), nullable=False)

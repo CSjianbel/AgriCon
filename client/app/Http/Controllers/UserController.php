@@ -18,6 +18,7 @@ class UserController extends Controller
         if ($user[0]['password'] == $request->password) {
             // Store user id in session
             session(['user_id' => $user[0]['id']]);
+            session(['user_type' => $user[0]['user_type']]);
             return redirect('/');
         } else {
             return redirect()->route('login')->with('error', 'Invalid credentials.');
@@ -37,38 +38,8 @@ class UserController extends Controller
         return redirect()->route('login');
     }
 
-    public function index()
-    {
-        // Your code here
-    }
-
-    public function create()
-    {
-        // Your code here
-    }
-
-    public function store(Request $request)
-    {
-        // Your code here
-    }
-
-    public function show($id)
-    {
-        // Your code here
-    }
-
-    public function edit($id)
-    {
-        // Your code here
-    }
-
-    public function update(Request $request, $id)
-    {
-        // Your code here
-    }
-
-    public function destroy($id)
-    {
-        // Your code here
+    public function logout() {
+        session()->flush();
+        return redirect()->route('login');
     }
 }

@@ -55,7 +55,7 @@
     <div class="fixed bottom-0 sm:w-[500px] w-full p-4 bg-white text-white border border-t">
         <a href="/">
             <button class="bg-[#1CB87E] w-full py-4 rounded-lg font-bold">
-                (₱12,000) Complete Payment
+                Complete Payment
             </button>
         </a>
     </div>
