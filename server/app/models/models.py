@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
-from ..config import Base
+from ..config import Base, engine
 import datetime
 
 class Post(Base):
@@ -11,3 +11,6 @@ class Post(Base):
     is_published = Column(Boolean, default=False)
     created = Column(DateTime, default=datetime.datetime.utcnow)
     modified = Column(DateTime, default=datetime.datetime.utcnow)
+
+# Reflect the schema and create tables
+Base.metadata.create_all(engine)
