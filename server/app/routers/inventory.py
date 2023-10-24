@@ -9,7 +9,7 @@ from ..controllers import create_inventory, get_inventories, update_inventory, d
 # Define your APIRouter
 inventory_router = APIRouter()
 
-@inventory_router.post("/create/{user_id}")
+@inventory_router.post("/{user_id}")
 def create(inventory: dict, user_id: int, db: Session = Depends(get_db)):
     db_inventory = create_inventory(db=db, inventory=inventory, user_id=user_id)
     return db_inventory
