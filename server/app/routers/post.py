@@ -1,46 +1,28 @@
-from fastapi import APIRouter
-from typing import List
-from ..config import database
-import secrets
+from fastapi import Depends, FastAPI, HTTPException, APIRouter
+from sqlalchemy.orm import Session
 
-from ..models import Post, PostCreate, posts
+from ..models import Post
+from ..config import SessionLocal, get_db
+from ..controllers import get_post, get_posts, create_post
 
-post_route = APIRouter()
+# Define your APIRouter
+post_router = APIRouter()
 
-
-@post_route.get("/", response_model=List[Post], status_code=200)
-async def all_posts():
-    query = posts.select()
-    all_posts = await database.fetch_all(query)
-    if posts is None:
-        return {"message": " No post found!"}
-    else:
-        return all_posts
-
-@post_route.get("/post/{id}", response_model=Post, status_code=200)
-async def get_post(id:int):
-    query = posts.select().where(posts.c.id == id)
-    return await database.fetch_one(query=query)
-
-
-@post_route.post("/create/", response_model=Post, status_code=201)
-async def create(post: PostCreate):
+@post_router.post("/create")
+def create(post: dict, db: Session = Depends(get_db)):
     print(post)
-    query = posts.insert().values(title=post.title, body=post.body)
-    last_record_id = await database.execute(query=query)
-    return {**post.dict(), "id": last_record_id}
+    db_post = create_post(db=db, post=post)
+    return db_post
 
+@post_router.get("/")
+def read_posts(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    posts = get_posts(db, skip=skip, limit=limit)
+    return posts
 
-@post_route.patch("/update/{id}", response_model=Post)
-async def update(id:int, post: Post):
-    query = posts.update().where(posts.c.id == id).values(title=post.title, body=post.body,
-                                                          is_published=post.is_published, created=post.created,
-                                                          modified=post.modified)
-    last_record_id = await database.execute(query=query)
-    return {**post.dict(), "id": last_record_id}
-
-
-@post_route.delete("/delete/{id}", response_model=Post)
-async def delete(id:int):
-    query = posts.delete().where(posts.c.id == id)
-    return await database.execute(query)
+@post_router.get("/{post_id}")
+def read_post(post_id: int, db: Session = Depends(get_db)):
+    db_post = get_post(db, post_id=post_id)
+    print(db_post)
+    if db_post is None:
+        raise HTTPException(status_code=404, detail="Post not found")
+    return db_post

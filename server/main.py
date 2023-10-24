@@ -1,12 +1,13 @@
-from app.config import engine
-from app.config import metadata
-from app.config import app
 import uvicorn
+from fastapi import FastAPI
+from app.routers.post import post_router
 
-from app.routers import post_route
+app = FastAPI(title="LAAD",
+              docs_url="/docs", 
+              redoc_url="/redocs"
+)
 
-app.include_router(post_route, prefix="/api/post", tags=["post"])
-
+app.include_router(post_router, prefix="/posts", tags=["posts"])
 
 @app.get("/")
 def home():
@@ -14,6 +15,5 @@ def home():
 
 
 if __name__ == '__main__':
-    metadata.create_all(engine)
-    uvicorn.run("main:app", host="127.0.0.1", port=8000)
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
 

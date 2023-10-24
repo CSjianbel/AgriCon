@@ -1,19 +1,13 @@
-from datetime import datetime
-from pydantic import BaseModel
-from typing import Optional
+from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from ..config import Base
+import datetime
 
+class Post(Base):
+    __tablename__ = "posts"
 
-''' Model Schema Using Pydantic '''
-
-class PostBase(BaseModel):
-    title: str
-    body: str
-
-class PostCreate(PostBase):
-    pass
-
-class Post(PostBase):
-    id: int
-    is_published: bool = False  # Providing a default value False
-    created: datetime = datetime.utcnow()
-    modified: datetime = datetime.utcnow()
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String(100))
+    body = Column(String(500))
+    is_published = Column(Boolean, default=False)
+    created = Column(DateTime, default=datetime.datetime.utcnow)
+    modified = Column(DateTime, default=datetime.datetime.utcnow)
