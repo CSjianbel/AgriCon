@@ -15,6 +15,9 @@
                 <input type="text" id="last-name" class="bg-gray-50 py-4 px-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#1CB87E] focus:border-[#1CB87E] block w-full p-2.5 " placeholder="Last name" required>
             </div>
             <div class="mb-6">
+                <input type="text" id="business-name" class="bg-gray-50 py-4 px-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#1CB87E] focus:border-[#1CB87E] block w-full p-2.5 " placeholder="Enter business name" required>
+            </div>
+            <div class="mb-6">
                 <input type="email" id="email" class="bg-gray-50 py-4 px-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#1CB87E] focus:border-[#1CB87E] block w-full p-2.5 " placeholder="Enter email" required>
             </div>
             <div class="mb-6">
