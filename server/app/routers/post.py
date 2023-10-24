@@ -3,7 +3,7 @@ from typing import List
 from ..config import database
 import secrets
 
-from ..models import Post, posts
+from ..models import Post, PostCreate, posts
 
 post_route = APIRouter()
 
@@ -17,7 +17,6 @@ async def all_posts():
     else:
         return all_posts
 
-
 @post_route.get("/post/{id}", response_model=Post, status_code=200)
 async def get_post(id:int):
     query = posts.select().where(posts.c.id == id)
@@ -25,9 +24,9 @@ async def get_post(id:int):
 
 
 @post_route.post("/create/", response_model=Post, status_code=201)
-async def create(post: Post):
-    query = posts.insert().values(title=post.title, body=post.body, is_published=post.is_published,
-                                  created=post.created, modified=post.modified)
+async def create(post: PostCreate):
+    print(post)
+    query = posts.insert().values(title=post.title, body=post.body)
     last_record_id = await database.execute(query=query)
     return {**post.dict(), "id": last_record_id}
 
