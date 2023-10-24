@@ -96,20 +96,23 @@
         <div class="w-full bg-gray-100 py-4">
             <p class="text-center">View All</p>
         </div>
+    
+  
 
         <p class="text-gray-600 font-bold mt-6 mb-4">Related Products</p>
 
-        
-    <div class="grid grid-cols-2 gap-4 pb-[100px]">
-        @for ($i = 1; $i <= 4; $i++)
-            <x-product-card />
-        @endfor
+            
+        <div class="grid grid-cols-2 gap-4 pb-[100px]">
+            @for ($i = 1; $i <= 4; $i++)
+                <x-product-card />
+            @endfor
+        </div>
     </div>
 
 
-    <div class="fixed bottom-0 sm:w-[500px] w-full p-4 bg-white text-white border border-t mx-auto">
+    <div class="fixed bottom-0 sm:w-[500px] w-full p-4 bg-white text-white border border-t">
         <button class="bg-[#1CB87E] w-full py-4 rounded-lg font-bold">
-            Message Supplier
+            Start Transaction
         </button>
     </div>
 
