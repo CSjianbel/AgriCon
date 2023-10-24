@@ -4,7 +4,7 @@ from typing import Union
 
 
 from ..config import SessionLocal, get_db
-from ..controllers import get_item, get_items, create_item, update_item, delete_item
+from ..controllers import get_items, create_item, update_item, delete_item
 
 # Define your APIRouter
 item_router = APIRouter()
