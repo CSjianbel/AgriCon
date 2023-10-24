@@ -3,7 +3,7 @@
 @section('content')
     <div class="px-6 flex bg-white items-center justify-between h-[80px] border-b mb-6">
         <div>
-            <p><img src="{{ asset('assets/agricon-transparent-logo.png') }}" width="130"></p>
+            <img src="{{ asset('assets/agricon-transparent-logo.png') }}" width="130">
         </div>
         <div>
             <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
