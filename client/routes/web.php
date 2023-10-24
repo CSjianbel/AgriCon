@@ -33,6 +33,10 @@ Route::get('/farmer-profile', function () {
     return view('farmer-profile');
 });
 
+Route::get('/business-profile', function () {
+    return view('business-profile');
+});
+
 Route::get('/inventory', function () {
     return view('inventory');
 });
