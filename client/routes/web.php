@@ -20,5 +20,3 @@ Route::get('/', function () {
 Route::get('/inventory', function () {
     return view('inventory');
 });
-
-
