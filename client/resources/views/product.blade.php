@@ -99,60 +99,11 @@
 
         <p class="text-gray-600 font-bold mt-6 mb-4">Related Products</p>
 
-        <div class="grid grid-cols-2 gap-4 pb-[100px]">
-            <div class="flex-grow bg-white border border-gray-200 rounded-lg shadow">
-                <div class="mx-auto p-2">
-                    <img class="rounded-t-lg mx-auto" src="{{ asset('assets/kankong.png') }}" alt=""
-                        width="150" height="100" />
-                </div>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb text-md font-bold tracking-tight text-gray-900 dark:text-white">KangKong</h5>
-                    </a>
-                    <p class="mb-4 font-normal text-sm text-gray-700 dark:text-gray-400">Seller Name</p>
-                    <p class="font-bold text-md">₱ 15.00 / kg</p>
-                </div>
-            </div>
-            <div class="flex-grow bg-white border border-gray-200 rounded-lg shadow">
-                <div class="mx-auto p-2">
-                    <img class="rounded-t-lg mx-auto" src="{{ asset('assets/kankong.png') }}" alt=""
-                        width="150" height="100" />
-                </div>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb text-md font-bold tracking-tight text-gray-900 dark:text-white">KangKong</h5>
-                    </a>
-                    <p class="mb-4 font-normal text-sm text-gray-700 dark:text-gray-400">Seller Name</p>
-                    <p class="font-bold text-md">₱ 15.00 / kg</p>
-                </div>
-            </div>
-            <div class="flex-grow bg-white border border-gray-200 rounded-lg shadow">
-                <div class="mx-auto p-2">
-                    <img class="rounded-t-lg mx-auto" src="{{ asset('assets/kankong.png') }}" alt=""
-                        width="150" height="100" />
-                </div>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb text-md font-bold tracking-tight text-gray-900 dark:text-white">KangKong</h5>
-                    </a>
-                    <p class="mb-4 font-normal text-sm text-gray-700 dark:text-gray-400">Seller Name</p>
-                    <p class="font-bold text-md">₱ 15.00 / kg</p>
-                </div>
-            </div>
-            <div class="flex-grow bg-white border border-gray-200 rounded-lg shadow">
-                <div class="mx-auto p-2">
-                    <img class="rounded-t-lg mx-auto" src="{{ asset('assets/kankong.png') }}" alt=""
-                        width="150" height="100" />
-                </div>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb text-md font-bold tracking-tight text-gray-900 dark:text-white">KangKong</h5>
-                    </a>
-                    <p class="mb-4 font-normal text-sm text-gray-700 dark:text-gray-400">Seller Name</p>
-                    <p class="font-bold text-md">₱ 15.00 / kg</p>
-                </div>
-            </div>
-        </div>
+        
+    <div class="grid grid-cols-2 gap-4 pb-[100px]">
+        @for ($i = 1; $i <= 4; $i++)
+            <x-product-card />
+        @endfor
     </div>
 
 
