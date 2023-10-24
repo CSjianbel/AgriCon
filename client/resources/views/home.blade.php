@@ -146,7 +146,6 @@
                 </div>
             </div>
         </div>
-
         <x-bottom-nav />
     </div>
 

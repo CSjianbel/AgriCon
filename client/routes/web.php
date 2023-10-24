@@ -20,3 +20,15 @@ Route::get('/', function () {
 Route::get('/inventory', function () {
     return view('inventory');
 });
+
+Route::get('/chats', function () {
+    return view('chats');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/transaction', function () {
+    return view('transaction_view');
+});
