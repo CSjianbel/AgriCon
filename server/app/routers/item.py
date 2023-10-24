@@ -4,12 +4,12 @@ from typing import Union
 
 
 from ..config import SessionLocal, get_db
-from ..controllers import get_item, get_items, create_item, update_item, delete_item
+from ..controllers import get_items, create_item, update_item, delete_item
 
 # Define your APIRouter
 item_router = APIRouter()
 
-@item_router.post("/create")
+@item_router.post("/")
 def create(item: dict, farm_id: int, db: Session = Depends(get_db)):
     db_item = create_item(db=db, item=item, farm_id=farm_id)
     return db_item
@@ -37,12 +37,12 @@ def read_items(
     items = get_items(db, filters=filters, skip=skip, limit=limit)
     return items
 
-@item_router.patch("/update/{item_id}")
+@item_router.patch("/{item_id}")
 def patch_item(item_id, item: dict, db: Session = Depends(get_db)):
     db_item = update_item(db, item_id=item_id, item=item)
     return db_item
 
-@item_router.delete("/delete/{item_id}")
+@item_router.delete("/{item_id}")
 def remove_item(item_id: int, db: Session=Depends(get_db)):
     delete_item(db, item_id)
     return {"message": "deleted item!"}
