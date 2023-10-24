@@ -2,7 +2,7 @@
 @section('content')
     <div>
         <x-header />
-        <div class="px-6">
+        <div class="px-6 mb-12">
             <form action="" class="flex items-center gap-x-2 mb-4">
                 <input type="text" id="first-name"
                     class="bg-gray py-4 px-4 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-[#1CB87E] focus:border-[#1CB87E] block w-full p-2.5 "
