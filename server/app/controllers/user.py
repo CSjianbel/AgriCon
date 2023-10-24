@@ -31,6 +31,8 @@ def get_users(db: Session, filters: dict, skip: int = 0, limit: int = 100):
         query = query.filter(User.last_name == filters['last_name'])
     if 'user_type' in filters:
         query = query.filter(User.user_type == filters['user_type'])
+    if 'email' in filters:
+        query = query.filter(User.email == filters['email'])
 
     return query.offset(skip).limit(limit).all()
 
