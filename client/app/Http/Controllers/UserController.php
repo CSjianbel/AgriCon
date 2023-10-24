@@ -23,7 +23,16 @@ class UserController extends Controller
     }
 
     public function signup(Request $request) {
+        $url = 'http://localhost:8001/users';
 
+        $user = Http::post($url, [
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'user_type' => $request->user_type
+        ]);
+        return redirect()->route('login');
     }
 
     public function index()
