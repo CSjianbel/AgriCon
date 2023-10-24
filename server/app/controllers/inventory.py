@@ -19,8 +19,7 @@ def create_inventory(db: Session, inventory: dict):
 
 def get_inventories(db: Session, filters: dict, skip: int = 0, limit: int = 100):
     query = db.query(Inventory)
-    if 'farm_id' in filters:
-        query = query.filter(Inventory.farm_id == filters['farm_id'])
+ 
     if 'order_id' in filters:
         query = query.filter(Inventory.order_id == filters['order_id'])
     if 'item_id' in filters:
@@ -29,6 +28,9 @@ def get_inventories(db: Session, filters: dict, skip: int = 0, limit: int = 100)
         query = query.filter(Inventory.quantity == filters['quantity'])
     if 'unit_of_measure' in filters:
         query = query.filter(Inventory.unit_of_measure == filters['unit_of_measure'])
+    if 'user_id' in filters:
+        query = query.filter(Inventory.user_id == filters['user_id'])
+
 
     return query.offset(skip).limit(limit).all()
 
