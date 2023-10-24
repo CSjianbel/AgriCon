@@ -17,6 +17,6 @@ class User(Base):
 
     business_orders = relationship('Order', back_populates="business")
     farmer_orders = relationship('Order', back_populates="farmer")
+
     items = relationship("Item", back_populates="farm")
 
-# Reflect the schema and create tables

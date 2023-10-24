@@ -12,10 +12,7 @@ class Order(Base):
     timestamp  = Column(DateTime, default=datetime.datetime.utcnow)
 
     business_id = Column(Integer, ForeignKey('users.id'))
-    business = relationship('User', back_populates="business_orders")
+    business = relationship('User', back_populates="orders")
 
     farmer_id = Column(Integer, ForeignKey('users.id'))
-    farmer = relationship('User', back_populates="farmer_orders")
-
-# Reflect the schema and create tables
-Base.metadata.create_all(engine)
+    farmer = relationship('User', back_populates="orders")
