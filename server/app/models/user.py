@@ -13,6 +13,7 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     first_name = Column(String(100))
     last_name = Column(String(100))
+    email = Column(String(100), unique=True, index=True)
     password = Column(String(64))
     user_type = Column(String(10))
     created = Column(DateTime, default=datetime.datetime.utcnow)
