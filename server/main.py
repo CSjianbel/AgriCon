@@ -11,7 +11,7 @@ app = FastAPI(title="LAAD",
 # 
 # app.include_router(post_router, prefix="/posts", tags=["posts"])
 app.include_router(user_router, prefix="/users", tags=["users"])
-app.include_router(order_router, prefix="/order", tags=["order"])
+app.include_router(order_router, prefix="/orders", tags=["order"])
 app.include_router(item_router, prefix="/items", tags=["items"])
 
 @app.get("/")

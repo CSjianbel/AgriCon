@@ -3,6 +3,7 @@ from sqlalchemy.orm import relationship
 from ..config import Base, engine
 import datetime
 from sqlalchemy.orm import relationship
+from .order import Order
 
 class User(Base):
     __tablename__ = "users"
@@ -14,9 +15,7 @@ class User(Base):
     user_type = Column(String(10))
     created = Column(DateTime, default=datetime.datetime.utcnow)
     modified = Column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
-
-    business_orders = relationship('Order', back_populates="business")
-    farmer_orders = relationship('Order', back_populates="farmer")
-
+    
+    business_orders = relationship('Order', back_populates="business", foreign_keys=[Order.business_id])
+    farm_orders = relationship('Order', back_populates="farm", foreign_keys=[Order.farm_id])
     items = relationship("Item", back_populates="farm")
-
