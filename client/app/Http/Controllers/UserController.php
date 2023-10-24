@@ -18,6 +18,7 @@ class UserController extends Controller
         if ($user[0]['password'] == $request->password) {
             // Store user id in session
             session(['user_id' => $user[0]['id']]);
+            session(['user_type' => $user[0]['user_type']]);
             return redirect('/');
         } else {
             return redirect()->route('login')->with('error', 'Invalid credentials.');
