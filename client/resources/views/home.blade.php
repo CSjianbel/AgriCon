@@ -45,7 +45,6 @@
                 @endfor
             </div>
         </div>
-
         <x-bottom-nav />
     </div>
 
