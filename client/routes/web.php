@@ -57,3 +57,4 @@ Route::get('/transaction', function () {
 use App\Http\Controllers\UserController;
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('signup', [UserController::class, 'signup'])->name('signup');
+Route::get('logout', [UserController::class, 'logout'])->name('logout');
