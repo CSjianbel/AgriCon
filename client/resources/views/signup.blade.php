@@ -7,8 +7,8 @@
             <div class="mb-6">
                 <select id="countries" name="user_type" class="bg-gray-50 border py-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#1CB87E] focus:border-[#1CB87E] block w-full p-2.5">
                     <option selected>Select User Type</option>
-                    <option value="US">Farmer</option>
-                    <option value="CA">Business</option>
+                    <option value="Farmer">Farmer</option>
+                    <option value="Business">Business</option>
                 </select>
             </div>
             <div class="flex flex-row gap-x-4 mb-6">
