@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.orm import relationship
-from ..config import Base, engine
+from ..config import Base
 import datetime
 from sqlalchemy.orm import relationship
 from .order import Order
