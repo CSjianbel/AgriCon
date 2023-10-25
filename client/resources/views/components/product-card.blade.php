@@ -5,7 +5,7 @@
         </div>
         <div class="p-5 bg-[#f1faf2] rounded-b-lg border-t">
             <h5 class="mb text-md font-bold tracking-tight text-[#014A4E]">{{ $product['name'] }}</h5>
-            <p class="font-normal text-sm text-gray-700 dark:text-gray-400">dawdawdwa</p>
+            <p class="font-normal text-sm text-gray-700 dark:text-gray-400">{{ $product['user']['first_name'].$product['user']['last_name'] }}</p>
         </div>
     </a>
 </div>
