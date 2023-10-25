@@ -23,8 +23,8 @@
 
                     </div>
                     <div class="flex-col">
-                        <p>Noel Emaas</p>
-                        <p>Message preview hadlajsdkalsjd</p>
+                        <p>John Doe</p>
+                        <p>Neque porro quisquam est qui dolorem ipsum</p>
                     </div>
                 </div>
                 <div class="flex gap-x-5 py-5">
@@ -32,8 +32,8 @@
 
                     </div>
                     <div class="flex-col">
-                        <p>Noel Emaas</p>
-                        <p>Message preview hadlajsdkalsjd</p>
+                        <p>Juan Dela Cruz</p>
+                        <p>Neque porro quisquam est qui dolorem ipsum </p>
                     </div>
                 </div>
                 <div class="flex gap-x-5 py-5">
@@ -41,8 +41,8 @@
 
                     </div>
                     <div class="flex-col">
-                        <p>Noel Emaas</p>
-                        <p>Message preview hadlajsdkalsjd</p>
+                        <p>Martin Edgar</p>
+                        <p>Neque porro quisquam est qui dolorem ipsum </p>
                     </div>
                 </div>
                 <div class="flex gap-x-5 py-5">
@@ -50,8 +50,8 @@
 
                     </div>
                     <div class="flex-col">
-                        <p>Noel Emaas</p>
-                        <p>Message preview hadlajsdkalsjd</p>
+                        <p>Edgar Atole</p>
+                        <p>Neque porro quisquam est qui dolorem ipsum </p>
                     </div>
                 </div>
             </div>
