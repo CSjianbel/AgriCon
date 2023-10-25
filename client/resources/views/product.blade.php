@@ -98,16 +98,13 @@
             <p class="text-center">View All</p>
         </div>
 
-
-
-        <p class="text-gray-600 font-bold mt-6 mb-4">Related Products</p>
-
+        {{-- <p class="text-gray-600 font-bold mt-6 mb-4">Related Products</p>
 
         <div class="grid grid-cols-2 gap-4 pb-[100px]">
             @for ($i = 1; $i <= 4; $i++)
                 <x-product-card />
             @endfor
-        </div>
+        </div> --}}
     </div>
 
 
