@@ -5,8 +5,9 @@
         <x-header />
 
         <div class="px-6">
-            <form action="" class="flex items-center gap-x-2 mb-4">
-                <input type="text" id="first-name"
+            <form method="GET" action="{{ route('search') }}" class="flex items-center gap-x-2 mb-4">
+                @csrf
+                <input type="text" id="search" name="search"
                     class="bg-gray py-4 px-4 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-[#1CB87E] focus:border-[#1CB87E] block w-full p-2.5 "
                     placeholder="Search Products">
                 <button type="submit"

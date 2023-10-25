@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\Search;
 use App\Http\Controllers\HomePage;
 use App\Http\Controllers\WishList;
-use App\Http\Controllers\Inventory;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,7 @@ use App\Http\Controllers\Inventory;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+use App\Http\Controllers\Inventory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FarmerProfile;
 use App\Http\Controllers\UserController;
@@ -20,6 +21,8 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [HomePage::class, 'homepage'])->name('home')->middleware('auth');
 Route::get('/inventory', [Inventory::class, 'inventory'])->name('inventory')->middleware('auth');
+
+Route::get('/search', [Search::class, 'search'])->name('search')->middleware('auth');
 
 Route::get('/login', function () {
     return view('signin');
