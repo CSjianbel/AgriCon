@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomePage;
+use App\Http\Controllers\Inventory;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +13,9 @@ use App\Http\Controllers\ProductController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-use App\Http\Controllers\HomePage;
-use App\Http\Controllers\Inventory;
+use App\Http\Controllers\FarmerProfile;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', [HomePage::class, 'homepage'])->name('home')->middleware('auth');
 Route::get('/inventory', [Inventory::class, 'inventory'])->name('inventory')->middleware('auth');
@@ -31,9 +32,7 @@ Route::get('/product', function () {
     return view('product');
 });
 
-Route::get('/farmer-profile', function () {
-    return view('farmer-profile');
-});
+Route::get('/farmer-profile', [FarmerProfile::class, 'farmerProfile'])->name('farmer-profile')->middleware('auth');
 
 Route::get('/business-profile', function () {
     return view('business-profile');
