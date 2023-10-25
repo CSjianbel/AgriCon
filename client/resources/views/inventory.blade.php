@@ -18,9 +18,9 @@
             </form>
             <p class="text-gray-600 font-bold mb-4">My Products</p>
             <div class="grid grid-cols-2 gap-4 pb-[100px]">
-                @for ($i = 1; $i <= 10; $i++)
-                    <x-product-card />
-                @endfor
+                @foreach ($products as $product)
+                    <x-product-card :product="$product" />
+                @endforeach
             </div>
         </div>
 

@@ -14,8 +14,10 @@ use App\Http\Controllers\ProductController;
 |
 */
 use App\Http\Controllers\HomePage;
+use App\Http\Controllers\Inventory;
 
 Route::get('/', [HomePage::class, 'homepage'])->name('home')->middleware('auth');
+Route::get('/inventory', [Inventory::class, 'inventory'])->name('inventory')->middleware('auth');
 
 Route::get('/login', function () {
     return view('signin');
@@ -37,9 +39,6 @@ Route::get('/business-profile', function () {
     return view('business-profile');
 });
 
-Route::get('/inventory', function () {
-    return view('inventory');
-});
 
 Route::get('/chats', function () {
     return view('chats');

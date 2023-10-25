@@ -52,7 +52,8 @@ class ProductController extends Controller
             'category' => 'Dairy',
             'status' => 'available',
         ]);
-        // return redirect()->route('/');
+
+        return redirect()->route('inventory');
     }
 
     // public function editProduct($id, Request $request)
