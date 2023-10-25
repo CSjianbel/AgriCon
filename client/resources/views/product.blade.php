@@ -8,7 +8,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
             </svg>
         </button>
-        <p class="font-bold">KangKong</p>
+        <p class="font-bold">Item Details</p>
         <div class="bg-[#ffffff] text-white p-3 rounded-lg">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
@@ -16,13 +16,14 @@
         </div>
     </div>
 
-    <div class="bg-white p-6">
-        <img class="rounded-t-lg mx-auto" src="{{ asset('assets/kankong.png') }}" alt=""
+
+    <div class="bg-white p-6 mb-20">
+        <img class="rounded-t-lg mx-auto" src="{{ $product['photo_url'] }}" alt=""
                 width="300" height="300" />
 
         <div class="flex justify-between items-center mb-6">
 
-            <p class="font-bold text-2xl">Kangkong</p>
+            <p class="font-bold text-2xl">{{ $product['name'] }}</p>
 
             <button class="p-4 w-fit h-fit bg-[#edf5ef] rounded-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">

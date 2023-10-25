@@ -1,5 +1,5 @@
 <div class="flex-grow bg-white border border-gray-200 rounded-lg shadow-sm">
-    <a href="/product-view">
+    <a href="/product-view/{{$product['id']}}" >
         <div class="mx-auto p-2">
             <img class="rounded-t-lg mx-auto h-[140px] w-[140px]" src={{ $product['photo_url'] }} alt=""/>
         </div>
