@@ -11,9 +11,9 @@ class ProductCard extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($product)
     {
-        //
+        $this->product = $product;
     }
 
     /**
@@ -21,6 +21,8 @@ class ProductCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.product-card');
+        return view('components.product-card', [
+            'product' => $this->product,
+        ]);
     }
 }

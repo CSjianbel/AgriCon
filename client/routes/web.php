@@ -13,10 +13,9 @@ use App\Http\Controllers\ProductController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+use App\Http\Controllers\HomePage;
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
+Route::get('/', [HomePage::class, 'homepage'])->name('home')->middleware('auth');
 
 Route::get('/login', function () {
     return view('signin');
