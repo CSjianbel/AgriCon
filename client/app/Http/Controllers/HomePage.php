@@ -76,22 +76,10 @@ class HomePage extends Controller
         
         $products = json_decode($jsonData, true);
         
-        foreach ($products as &$product) {
-            $product['user'] = $this->getUser(rand(1,3));
-        }
-        unset($product);
         
         // Now, $products is an array containing your product data as a dictionary
         
         return view('home', compact('products'));
     }    
-
-    public function getUser($id) {
-        $url = 'http://localhost:8001/users';
-        $user = Http::get($url, [
-            'user_id' => $id
-        ]);
-        return $user[0];
-    }
 }
 
