@@ -29,9 +29,7 @@ Route::get('/signup', function() {
     return view('signup');
 });
 
-Route::get('/product', function () {
-    return view('product');
-});
+Route::get('/product-view/{id}', [ProductController::class, 'getProductDetails'])->name('product')->middleware('auth');
 
 Route::get('/wishlist', [WishList::class, 'wishlist'])->name('wishlist')->middleware('auth');
 
@@ -53,10 +51,6 @@ Route::get('/profile', function () {
 Route::get('/profile', function () {
     return view('business-profile');
 })->middleware('business');
-
-Route::get('/product-view', function () {
-    return view('product');
-});
 
 Route::get('/transaction', function () {
     return view('transaction_view');
