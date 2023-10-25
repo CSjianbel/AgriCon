@@ -5,7 +5,7 @@
         </div>
         <div class="p-5 bg-[#f1faf2] rounded-b-lg border-t">
             <h5 class="mb text-md font-bold tracking-tight text-[#014A4E]">{{ $product['name'] }}</h5>
-            <p class="font-normal text-sm text-gray-700 dark:text-gray-400">{{ $username }}</p>
+            <p class="font-normal text-sm text-gray-700 dark:text-gray-400">Martin the Farmer</p>
         </div>
     </a>
 </div>
