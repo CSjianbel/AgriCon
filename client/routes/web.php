@@ -26,9 +26,9 @@ Route::get('/signup', function() {
     return view('signup');
 });
 
-Route::get('/product', function () {
-    return view('product');
-});
+// Route::get('/product', function () {
+//     return view('product');
+// });
 
 Route::get('/farmer-profile', function () {
     return view('farmer-profile');
@@ -66,10 +66,15 @@ Route::get('/payment-methods', function () {
     return view('payment-method');
 });
 
+Route::get('/cart', function () {
+    return view('wishlist');
+});
+
 
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('signup', [UserController::class, 'signup'])->name('signup');
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
+Route::get('product', [ProductController::class, 'getAllProducts'])->name('products');
 // Route::get('products', [ProductController::class, 'getAllProducts'])->name('products');
 // Route::get('products/{id}', [ProductController::class, 'getFarmProduct'])->name('products');
 Route::post('create-product', [ProductController::class, 'createProduct'])->name('create.product');
