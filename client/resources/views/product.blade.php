@@ -17,7 +17,7 @@
     </div>
 
 
-    <div class="bg-white p-6">
+    <div class="bg-white p-6 mb-20">
         <img class="rounded-t-lg mx-auto" src="{{ $product['photo_url'] }}" alt=""
                 width="300" height="300" />
 
